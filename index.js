@@ -10,9 +10,13 @@ require("./passport");
 
 const app = express();
 // const PORT = process.env.PORT || 8080;
-app.use(cors({
-  origin : "*"
-}));
+app.use(
+  cors({
+    origin: "*",
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+);
 
 app.use(
   cookieSession({
@@ -24,7 +28,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());
-
 
 app.use("/auth", authRoute);
 
