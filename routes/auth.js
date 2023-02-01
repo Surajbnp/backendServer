@@ -8,7 +8,7 @@ router.get(
   "/google/callback",
   passport.authenticate("google", {
     failureRedirect: "/login/failed",
-    successRedirect : "http://localhost:3000/"
+    successRedirect : "https://quiet-biscotti-6a1ed3.netlify.app"
   })
 );
 
