@@ -10,6 +10,9 @@ require("./passport");
 
 const app = express();
 // const PORT = process.env.PORT || 8080;
+app.use(cors({
+  origin : "https://quiet-biscotti-6a1ed3.netlify.app"
+}));
 
 app.use(
   cookieSession({
@@ -22,7 +25,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());
 
-app.use(cors());
 
 app.use("/auth", authRoute);
 
@@ -39,7 +41,7 @@ app.post("/event/create", async (req, res) => {
   }
 });
 
-// homepage route
+// homepage
 
 app.get("/", (req, res) => {
   res.send("Homepage");
