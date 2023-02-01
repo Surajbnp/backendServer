@@ -23,11 +23,7 @@ app.use(passport.session());
 app.use(express.json());
 
 app.use(
-  cors({
-    origin: "http://localhost:3000",
-    method: "GET,POST,PUT,DELETE",
-    credentials: true,
-  })
+  cors({credentials: true})
 );
 
 app.use("/auth", authRoute);
