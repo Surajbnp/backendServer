@@ -39,6 +39,8 @@ app.post("/event/create", async (req, res) => {
   }
 });
 
+// homepage route
+
 app.get("/", (req, res) => {
   res.send("Homepage");
 });
