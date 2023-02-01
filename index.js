@@ -11,7 +11,7 @@ require("./passport");
 const app = express();
 // const PORT = process.env.PORT || 8080;
 app.use(cors({
-  origin : "https://quiet-biscotti-6a1ed3.netlify.app"
+  origin : "*"
 }));
 
 app.use(
