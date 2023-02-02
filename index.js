@@ -9,7 +9,7 @@ require("dotenv").config();
 require("./passport");
 
 const app = express();
-// const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 app.use(
   cors({
     origin: "*",
@@ -65,7 +65,7 @@ app.get("/event", async (req, res) => {
   }
 });
 
-app.listen("8080", async () => {
+app.listen(PORT, async () => {
   try {
     await connection;
     console.log("connected to  db");
